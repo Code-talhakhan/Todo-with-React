@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #0b0b0b;
+  color: #fff;
+  min-height: 100vh;
+  padding: 30px 15px;
+}
+
+.app-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.workspace-board {
+  width: 80%;
+  max-width: 700px;
+  background: #141414;
+  border: 1px solid #3a3a3a;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.app-header {
+  background: linear-gradient(135deg, #ff5f1f, #ff7b00, #ff9500);
+  padding: 32px 30px; /* Thodi padding barha di hai bade font ko space dene ke liye */
+  text-align: center;
+}
+
+/* Heading ka size yahan barha diya gaya hai */
+.header-content-wrapper h1 {
+  font-size: 3rem; /* Phly 2.4rem tha, ab fully bold aur dominant hai */
+  font-weight: 900; /* Font weight maximum kar diya extra boldness ke liye */
+  color: #fff;
+  letter-spacing: -0.5px; /* Premium compact look ke liye spacing decrease ki hai */
+}
+
+.header-content-wrapper p {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.app-body {
+  padding: 25px;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.todo-form input,
+.todo-form textarea {
+  width: 90%;
+  max-width: 550px;
+  background: #1d1d1d;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.todo-form textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+.todo-form input::placeholder,
+.todo-form textarea::placeholder {
+  color: #888;
+}
+
+.todo-form input:focus,
+.todo-form textarea:focus {
+  border-color: #ff7b00;
+  box-shadow: 0 0 0 4px rgba(255, 123, 0, 0.15);
+}
+
+.submit-btn {
+  align-self: flex-end;
+  margin-right: 5%;
+  background: linear-gradient(135deg, #ff6b00, #ff8c00);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 123, 0, 0.35);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-top: 6px;
+  padding-right: 5px;
+}
+
+.result::-webkit-scrollbar {
+  width: 6px;
+}
+
+.result::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.result::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+.result::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 35px 20px;
+  border: 1px dashed #333;
+  border-radius: 14px;
+  color: #777;
+}
+
+.post {
+  background: #1a1a1a;
+  border: 1px solid #303030;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  transition: 0.25s ease;
+}
+
+.post:hover {
+  transform: translateY(-2px);
+  border-color: #ff7b00;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 123, 0, 0.15);
+}
+
+.post-content {
+  flex: 1;
+}
+
+.post-content h2 {
+  color: #ff8c00;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.post-content p {
+  color: #d0d0d0;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.timestamp {
+  color: #7a7a7a;
+  font-size: 0.8rem;
+}
+
+.button-container {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: #252525;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.action-btn.edit:hover {
+  color: #ff8c00;
+}
+
+.action-btn.delete:hover {
+  color: #ff5a5a;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.swal2-popup {
+  border: 1px solid #3a3a3a !important;
+  border-radius: 20px !important;
+}
+
+.swal2-input:focus, 
+.swal2-textarea:focus {
+  border-color: #ff7b00 !important;
+  box-shadow: 0 0 0 4px rgba(255, 123, 0, 0.15) !important;
+}
+
+@media (max-width: 768px) {
+  .header-content-wrapper h1 {
+    font-size: 2.4rem; /* Mobile devices par heading responsive adjust hojaye gi */
+  }
+
+  .workspace-board {
+    width: 100%;
+  }
+
+  .todo-form input,
+  .todo-form textarea {
+    width: 100%;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-right: 0;
+    justify-content: center;
+  }
+
+  .post {
+    flex-direction: column;
+  }
+
+  .button-container {
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid #303030;
+  }
+}
