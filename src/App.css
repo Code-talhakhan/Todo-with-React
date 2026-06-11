@@ -30,24 +30,24 @@ body {
 
 .app-header {
   background: linear-gradient(135deg, #ff5f1f, #ff7b00, #ff9500);
-  padding: 32px 30px; /* Thodi padding barha di hai bade font ko space dene ke liye */
+  padding: 32px 30px; 
   text-align: center;
 }
 
-/* Heading ka size yahan barha diya gaya hai */
+
 .header-content-wrapper h1 {
-  font-size: 3rem; /* Phly 2.4rem tha, ab fully bold aur dominant hai */
-  font-weight: 900; /* Font weight maximum kar diya extra boldness ke liye */
+  font-size: 3rem; 
+  font-weight: 900; 
   color: #fff;
-  letter-spacing: -0.5px; /* Premium compact look ke liye spacing decrease ki hai */
+  letter-spacing: -0.5px; 
 }
 
 .header-content-wrapper p {
   margin-top: 6px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.4px;
+   color: rgba(255, 255, 255, 0.9);
+   font-size: 1.1rem;
+   font-weight: 500;
+   letter-spacing: 0.4px;
 }
 
 .app-body {
@@ -172,8 +172,11 @@ body {
 
 .post-content h2 {
   color: #ff8c00;
-  font-size: 1.1rem;
-  margin-bottom: 6px;
+  font-size: 1.45rem;        
+  font-weight: 700;         
+  letter-spacing: -0.3px;    
+  margin-bottom: 8px;        
+  line-height: 1.3;          
 }
 
 .post-content p {
@@ -242,7 +245,7 @@ body {
 
 @media (max-width: 768px) {
   .header-content-wrapper h1 {
-    font-size: 2.4rem; /* Mobile devices par heading responsive adjust hojaye gi */
+    font-size: 2.4rem; 
   }
 
   .workspace-board {
